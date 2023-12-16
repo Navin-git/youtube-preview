@@ -1,0 +1,3 @@
+type Obj = {
+  [string]: any;
+};
