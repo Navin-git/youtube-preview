@@ -40,9 +40,11 @@ const YoutubeBanner = ({
           <h3 className="card-title">{title}</h3>
           <p className="card-dec">{content}</p>
         </div>
-        <YoutubeModel isOpen={isOpen} id={id} setIsOpen={setIsOpen}>
-          {children}
-        </YoutubeModel>
+        {id && (
+          <YoutubeModel isOpen={isOpen} id={id} setIsOpen={setIsOpen}>
+            {children}
+          </YoutubeModel>
+        )}
       </div>
     </section>
   );

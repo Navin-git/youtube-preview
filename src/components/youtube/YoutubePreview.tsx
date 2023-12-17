@@ -1,6 +1,7 @@
 import { PlayIcon } from "@/assets/icons";
 import { useState } from "react";
 import YoutubeVideoPlayer from "./YoutubeVideoPlayer";
+import { noThumbnail } from "@/assets/images";
 
 type Props = {
   isPopOpen: boolean;
@@ -15,9 +16,26 @@ const YoutubePreview = ({ isPopOpen, id, thumbnail }: Props) => {
       {isPlay && !isPopOpen ? (
         <YoutubeVideoPlayer id={id} autoplay={1} />
       ) : (
-        <div className="full" onClick={() => setIsPlay(true)}>
-          <img src={thumbnail} alt="" />
-          <PlayIcon />
+        <div
+          className="full"
+          onClick={() => {
+            id && setIsPlay(true);
+          }}
+        >
+          <img
+            src={
+              thumbnail
+                ? thumbnail
+                : id
+                ? `https://img.youtube.com/vi/${id}/0.jpg`
+                : noThumbnail
+            }
+            alt=""
+            style={{
+              cursor: id ? "pointer" : "default",
+            }}
+          />
+          {id && <PlayIcon />}
         </div>
       )}
     </div>

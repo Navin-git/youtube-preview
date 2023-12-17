@@ -1,3 +1,5 @@
+// import { thumbnail } from "@/assets/images";
+
 import { thumbnail } from "@/assets/images";
 
 export const videoList = [

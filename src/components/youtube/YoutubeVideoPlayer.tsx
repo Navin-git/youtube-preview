@@ -30,14 +30,14 @@ const YoutubeVideoPlayer = ({
   controls = 1,
   rel = 1,
   id,
-  loop = 0,
+  loop = 1,
   title = "",
   content = "",
 }: Props) => {
   return (
     <iframe
       className="full"
-      src={`https://www.youtube.com/embed/${id}?${`si=${si}&`}rel=${rel}&modestbranding=${modestbranding}&autohide=${autohide}&mute=${mute}&showinfo=${showinfo}&controls=${controls}&autoplay=${autoplay}&loop=${loop}`}
+      src={`https://www.youtube.com/embed/${id}?playlist=${id}&${`si=${si}&`}rel=${rel}&modestbranding=${modestbranding}&autohide=${autohide}&mute=${mute}&showinfo=${showinfo}&controls=${controls}&autoplay=${autoplay}&loop=${loop}`}
       title={title}
       content={content}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
